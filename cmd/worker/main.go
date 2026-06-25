@@ -5,7 +5,7 @@ import (
     "encoding/json"
     "fmt"
     "time"
-    "github.com/jahnavigajjala-3/email-queue/internal/job"
+    "github.com/jahnavigajjala/email-queue/internal/job"
     "github.com/redis/go-redis/v9"
 )
 var ctx = context.Background()
