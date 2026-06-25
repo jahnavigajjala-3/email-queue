@@ -5,7 +5,7 @@ import (
     "fmt"
     "net/http"
     "context"
-    "github.com/jahnavigajjala-3/email-queue/internal/job"
+    "github.com/jahnavigajjala/email-queue/internal/job"
     "github.com/redis/go-redis/v9"
 )
 
