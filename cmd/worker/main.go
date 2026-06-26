@@ -5,10 +5,12 @@ import (
     "encoding/json"
     "fmt"
     "time"
+	"os"
     "github.com/jahnavigajjala/email-queue/internal/job"
     "github.com/redis/go-redis/v9"
 )
 var ctx = context.Background()
+var rdb *redis.Client
 
 func main() {
     redisAddr := os.Getenv("REDIS_ADDR")
