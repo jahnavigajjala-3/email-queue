@@ -13,8 +13,12 @@ var ctx = context.Background()
 var rdb *redis.Client
 
 func main() {
+    redisAddr := os.Getenv("REDIS_ADDR")f redisAddr == "" {
+    if redisAddr == "" {
+        redisAddr = "localhost:6379"
+    }
     rdb = redis.NewClient(&redis.Options{
-        Addr: "localhost:6379",
+        Addr: redisAddr,
     })
     http.HandleFunc("/send-emails", handleSendEmails)
     fmt.Println("API server running on port 8080")

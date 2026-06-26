@@ -11,9 +11,13 @@ import (
 var ctx = context.Background()
 
 func main() {
-    rdb := redis.NewClient(&redis.Options{
-        Addr: "localhost:6379",
-    })
+    redisAddr := os.Getenv("REDIS_ADDR")
+    if redisAddr == "" {
+    redisAddr = "localhost:6379"
+}
+    rdb = redis.NewClient(&redis.Options{
+    Addr: redisAddr,
+})
 
     fmt.Println("Worker started, waiting for jobs...")
 
