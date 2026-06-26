@@ -5,6 +5,7 @@ import (
     "fmt"
     "net/http"
     "context"
+	"os"
     "github.com/jahnavigajjala/email-queue/internal/job"
     "github.com/redis/go-redis/v9"
 )
@@ -13,7 +14,8 @@ var ctx = context.Background()
 var rdb *redis.Client
 
 func main() {
-    redisAddr := os.Getenv("REDIS_ADDR")f redisAddr == "" {
+    redisAddr := os.Getenv("REDIS_ADDR")
+	
     if redisAddr == "" {
         redisAddr = "localhost:6379"
     }
